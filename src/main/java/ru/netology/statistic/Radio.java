@@ -1,8 +1,8 @@
 package ru.netology.statistic;
 
 public class Radio {
-    public int currentNumberRS;
-    public int currentVolume;
+    private int currentNumberRS;
+    private int currentVolume;
 
     public int getCurrentNumberRS() {
         return currentNumberRS;
