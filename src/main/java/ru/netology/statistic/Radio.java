@@ -1,34 +1,47 @@
 package ru.netology.statistic;
 
 public class Radio {
-    private int currentNumberRS;
+
     private int currentVolume;
+    private int minNumberRS = 0;
+    private int maxNumberRS;
+    private int currentNumberRS = minNumberRS;
+
+//    public Radio(int minNumberRS, int maxNumberRS) {
+//        this.minNumberRS = minNumberRS;
+//        this.maxNumberRS = maxNumberRS;
+//        this.currentNumberRS = minNumberRS;
+///    }
+
+    public Radio(int size) {
+        maxNumberRS = minNumberRS + size - 1;
+    }
 
     public int getCurrentNumberRS() {
         return currentNumberRS;
     }
 
     public void setCurrentNumberRS(int newCurrentNumberRS) {
-        if (newCurrentNumberRS < 0) {
+        if (newCurrentNumberRS < minNumberRS) {
             return;
         }
-        if (newCurrentNumberRS > 9) {
+        if (newCurrentNumberRS > maxNumberRS) {
             return;
         }
         currentNumberRS = newCurrentNumberRS;
     }
 
     public void next() {
-        if (currentNumberRS >= 9) {
-            currentNumberRS = 0;
+        if (currentNumberRS >= maxNumberRS) {
+            currentNumberRS = minNumberRS;
         } else {
             currentNumberRS = currentNumberRS + 1;
         }
     }
 
     public void prev() {
-        if (currentNumberRS <= 0) {
-            currentNumberRS = 9;
+        if (currentNumberRS <= minNumberRS) {
+            currentNumberRS = maxNumberRS;
         } else {
             currentNumberRS = currentNumberRS - 1;
         }
