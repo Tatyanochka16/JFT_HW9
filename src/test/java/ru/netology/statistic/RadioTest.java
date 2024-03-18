@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
     @Test
     public void shouldSetNumberRS() {
-        Radio setRS = new Radio();
+        ru.netology.statistic.Radio setRS = new ru.netology.statistic.Radio(10);
         setRS.setCurrentNumberRS(0);
         int expected = 0;
         int actual = setRS.getCurrentNumberRS();
@@ -15,7 +15,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNumberRSAboveMax() {
-        Radio setRS = new Radio();
+        ru.netology.statistic.Radio setRS = new ru.netology.statistic.Radio(10);
         setRS.setCurrentNumberRS(16);
         int expected = 0;
         int actual = setRS.getCurrentNumberRS();
@@ -24,7 +24,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetNumberRSUnderMin() {
-        Radio setRS = new Radio();
+        ru.netology.statistic.Radio setRS = new ru.netology.statistic.Radio(10);
         setRS.setCurrentNumberRS(-1);
         int expected = 0;
         int actual = setRS.getCurrentNumberRS();
@@ -33,7 +33,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextAboveMAx() {
-        Radio nextRS = new Radio();
+        ru.netology.statistic.Radio nextRS = new ru.netology.statistic.Radio(10);
         nextRS.setCurrentNumberRS(9);
         nextRS.next();
         int expected = 0;
@@ -43,7 +43,7 @@ public class RadioTest {
 
     @Test
     public void shouldNextNearMin() {
-        Radio nextRS = new Radio();
+        ru.netology.statistic.Radio nextRS = new ru.netology.statistic.Radio(10);
         nextRS.setCurrentNumberRS(0);
         nextRS.next();
         int expected = 1;
@@ -53,7 +53,7 @@ public class RadioTest {
 
     @Test
     public void shouldNext() {
-        Radio nextRS = new Radio();
+        ru.netology.statistic.Radio nextRS = new ru.netology.statistic.Radio(10);
         nextRS.setCurrentNumberRS(5);
         nextRS.next();
         int expected = 6;
@@ -63,7 +63,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrevNearMin() {
-        Radio prevRS = new Radio();
+        ru.netology.statistic.Radio prevRS = new ru.netology.statistic.Radio(10);
         prevRS.setCurrentNumberRS(0);
         prevRS.prev();
         int expected = 9;
@@ -73,7 +73,7 @@ public class RadioTest {
 
     @Test
     public void shouldPrev() {
-        Radio prevRS = new Radio();
+        ru.netology.statistic.Radio prevRS = new ru.netology.statistic.Radio(10);
         prevRS.setCurrentNumberRS(5);
         prevRS.prev();
         int expected = 4;
@@ -84,7 +84,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolume() {
-        Radio setV = new Radio();
+        ru.netology.statistic.Radio setV = new ru.netology.statistic.Radio(10);
         setV.setCurrentVolume(80);
         int expected = 80;
         int actual = setV.getCurrentVolume();
@@ -93,7 +93,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolumeAboveMax() {
-        Radio setV = new Radio();
+        ru.netology.statistic.Radio setV = new ru.netology.statistic.Radio(10);
         setV.setCurrentVolume(101);
         int expected = 0;
         int actual = setV.getCurrentVolume();
@@ -102,7 +102,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetVolumeUnderMin() {
-        Radio setV = new Radio();
+        ru.netology.statistic.Radio setV = new ru.netology.statistic.Radio(10);
         setV.setCurrentVolume(-1);
         int expected = 0;
         int actual = setV.getCurrentVolume();
@@ -111,7 +111,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolume() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(20);
         nextV.plus();
         int expected = 21;
@@ -121,7 +121,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolumeOnMax() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(100);
         nextV.plus();
         int expected = 100;
@@ -131,7 +131,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolumeNearMax() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(99);
         nextV.plus();
         int expected = 100;
@@ -141,7 +141,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolumeOnMin() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(0);
         nextV.plus();
         int expected = 1;
@@ -151,7 +151,7 @@ public class RadioTest {
 
     @Test
     public void shouldPlusVolumeNearMin() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(1);
         nextV.plus();
         int expected = 2;
@@ -161,7 +161,7 @@ public class RadioTest {
 
     @Test
     public void shouldMinesVolume() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(55);
         nextV.mines();
         int expected = 54;
@@ -171,7 +171,7 @@ public class RadioTest {
 
     @Test
     public void shouldMinesVolumeOnMin() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(0);
         nextV.mines();
         int expected = 0;
@@ -181,7 +181,7 @@ public class RadioTest {
 
     @Test
     public void shouldMinesVolumeNearMin() {
-        Radio nextV = new Radio();
+        ru.netology.statistic.Radio nextV = new ru.netology.statistic.Radio(10);
         nextV.setCurrentVolume(1);
         nextV.mines();
         int expected = 0;
@@ -191,3 +191,4 @@ public class RadioTest {
 
 
 }
+
